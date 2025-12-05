@@ -10,9 +10,9 @@
 
 ## 프로젝트 구조
 CalculatorProject
-|____scr
-      |____com.example.calculator
-            |____Main.java
+└─ src
+   └─ com.example.calculator
+      └─ Main.java
 
 ## 구현 과정
 ### 프로젝트 생성

@@ -1,31 +1,45 @@
-# Java 계산기 과제
+# 🧮 CalculatorProject
 
-2개의 양의 정수를 입력받고, 사칙연산을 수행하는 계산기 프로그램이다.  
-사용자가 `exit`을 입력하기 전까지 반복적으로 연산을 수행하며,  
-**Step2에서는 Main과 Calculator 클래스를 분리하여 객체지향 구조로 개선**했다.  
-**Step3에서는 Enum, 제너릭, 람다&스트림을 적용**하여 더 확장 가능하고 유지보수하기 편한 형태의 계산기로 발전시켰다.
+**2개의 숫자와 연산자를 입력받아 사칙연산을 수행하는 Java 계산기 프로젝트**  
+Step별로 기능을 확장하며 **객체지향 분리 → Enum → 제네릭 → 람다&스트림**까지 연습했습니다.
 
 ---
 
-## ✨ 핵심 목표
+## ✅ 주요 기능
 
-- 양의 정수 입력 처리 (0 포함, 음수 입력 시 재입력 요청)
-- 사칙연산 처리 (`+`, `-`, `*`, `/`)
-- 예외 처리  
-  - 분모가 0일 경우 오류 메시지 출력
-- 반복 실행  
-  - `exit` 입력 시 프로그램 종료
-- (Step2) `Calculator` 객체를 통해 연산 수행
-- (Step2) 계산 결과를 `List`에 저장 및 삭제 기능 구현
+- 두 수 입력 후 사칙연산 수행 (`+`, `-`, `*`, `/`)
+- 사용자가 종료 입력을 하기 전까지 반복 실행
+- 계산 결과를 `List`에 저장
+- 가장 먼저 저장한 결과 삭제 기능 (FIFO)
+- (Step3) `Enum`으로 연산자 관리
+- (Step3) `Generic(T extends Number)`으로 다양한 숫자 타입 처리
+- (Step3) 람다&스트림으로 조건 기반 결과 조회/가공
 
 ---
 
-## 🗂️ 프로젝트 구조
+## 🧩 Step별 목표
+
+### Step 1. 기본 계산기
+- 입력 → 연산 → 출력의 기본 흐름 구현
+
+### Step 2. 객체지향 구조로 개선
+- `Main`과 `Calculator` 클래스를 분리
+- 상태(숫자/연산자/결과 리스트)를 객체로 관리
+
+### Step 3. 확장형 계산기
+- `Operator enum`으로 연산자 타입을 안전하게 제한
+- `Calculator<T extends Number>`로 타입 확장
+- Stream으로 결과 리스트를 필터링/조회
+
+---
+
+## 📁 프로젝트 구조 (예시)
 
 ```text
-CalculatorProject
-└── src
-    └── com.example.calculator
-        ├── Main.java
-        └── Calculator.java
-        └── Operator.java
+CalculatorProject/
+ ├─ src/
+ │  └─ com/example/calculator/
+ │      ├─ Main.java
+ │      ├─ Calculator.java
+ │      └─ Operator.java
+ └─ README.md
